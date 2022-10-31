@@ -20,8 +20,8 @@ THis is good test of javascript functions and manipulation with DOM,
 
 ### Links
 
-- Solution URL: [Repo](https://github.com/byron-a/SimonGame.git)
-- Live Site URL: [live page](https://byron-a.github.io/SimonGame/)
+- Solution URL: [Repo](https://github.com/byron-a/SimonsGame.git)
+- Live Site URL: [live page](https://byron-a.github.io/SimonsGame/)
 
 ### Built with
 
