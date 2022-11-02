@@ -47,7 +47,7 @@ function nextSequence() {
     let buttons = $("#" + randomChosenColour);
    // buttons.ready(() => {
       buttons.css("opacity", "0");
-      setInterval(() => {
+      setTimeout(() => {
         buttons.css("opacity", "1");
       }, 200);
    // });
@@ -112,7 +112,7 @@ $(".btn").click((e) => {
       } else {
         playSound("wrong");
         $("body").addClass("game-over");
-        setInterval(() => {
+        setTimeout(() => {
           $("body").removeClass("game-over");
         }, 100);
         $("h1").html("Last Chance !");
@@ -127,7 +127,7 @@ $(".btn").click((e) => {
 //BUTTON ANIMATION......
 function animatePress(curentColour) {
   curentColour.addClass("pressed");
-  setInterval(() => {
+  setTimeout(() => {
     curentColour.removeClass("pressed");
   }, 100);
 }
@@ -135,7 +135,7 @@ function animatePress(curentColour) {
 //GAMEOVER...
 function gameOver() {
   if (gameNumber == 20) {
-    setInterval(() => {
+    setTimeout(() => {
       $(".btn").toggleClass("pressed");
     }, 200);
     $("h1").html("You Won !, Smart Ass. Press any key to restart.");
@@ -144,7 +144,7 @@ function gameOver() {
   } else {
     playSound("wrong");
     $("body").addClass("game-over");
-    setInterval(() => {
+    setTimeout(() => {
       $("body").removeClass("game-over");
     }, 100);
     $("h1").html("Game Over!, Click any key to restart! ");
