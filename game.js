@@ -8,21 +8,30 @@ let userClickedPattern = [];
 
 let buttonColour = ["red", "blue", "green", "yellow"]
 
-var onePress = 0;
+var gameNumber = 0;
 var level = 'level ';
 //var difficulty = 0;
 
 //START GAME......
 document.addEventListener('keypress',()=>{
-    if(onePress == 20){
+    if(gameNumber == 20){
         location.reload();
-    }if(onePress < 1){
+    }if(gameNumber < 1){
+       setTimeout(()=>{nextSequence();},250) 
+        }
+});
+document.addEventListener('click',()=>{
+    if(gameNumber == 20){
+        location.reload();
+    }if(gameNumber < 1){
        setTimeout(()=>{nextSequence();},250) 
         }
 });
 
+
+
 function nextSequence(){
-    if(onePress==20){
+    if(gameNumber==20){
         gameOver();
     }else{
         let randomNumber = Math.floor(Math.random()*4);
@@ -36,8 +45,8 @@ function nextSequence(){
         });
 
         playSound(buttons.text()); //button colour getter
-        onePress++
-        $('h1').html(level + onePress);
+        gameNumber++
+        $('h1').html(level + gameNumber);
     }
     
 }
@@ -65,7 +74,7 @@ let chance = 0;
 $('.btn').click((e)=>{
     if(gamePattern.length >0){
         var userChoosenColour = e.target; //finds the node
-        console.log(userChoosenColour)
+        // console.log(userChoosenColour)
         var id = userChoosenColour.getAttribute("id");
         let patternItems = userClickedPattern.length;
         userClickedPattern.push(id);
@@ -106,18 +115,18 @@ function animatePress(curentColour){
 
 //GAMEOVER...
 function gameOver(){
-    if(onePress == 20){
+    if(gameNumber == 20){
         setInterval(()=>{$('.btn').toggleClass('pressed')},200);
         $('h1').html('You Won !, Smart Ass. Press any key to restart.');
         clickFreq = undefined;
-        onePress = 20;
+        gameNumber = 20;
     }else{
         playSound('wrong');
         $('body').addClass('game-over')
         setInterval(()=>{$('body').removeClass('game-over')},100)
         $('h1').html('Game Over!, You Dumb Ass. ');  
         clickFreq = 0;
-        onePress = 0;
+        gameNumber = 0;
         gamePattern = [];
         userClickedPattern = [];
     }
