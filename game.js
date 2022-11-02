@@ -124,7 +124,7 @@ function gameOver(){
         playSound('wrong');
         $('body').addClass('game-over')
         setInterval(()=>{$('body').removeClass('game-over')},100)
-        $('h1').html('Game Over!, You Dumb Ass. ');  
+        $('h1').html('Game Over!, You Dumb Ass. Click any key to restart! ');  
         clickFreq = 0;
         gameNumber = 0;
         gamePattern = [];
