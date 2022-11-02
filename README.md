@@ -4,7 +4,7 @@
  -->
 
  # SimonGame
-This is a game of pattern retention for as long as you can remember. It is a good brain test.
+This is a game of pattern retention for as long as you can remember. It is a good brain test. 
 
 ##HOW TO PLAY
 In this game you click any key or button on your keyboard to start,
@@ -26,6 +26,7 @@ In this game you click any key or button on your keyboard to start,
 
 ## Overview
 THis is good test of javascript functions and manipulation with DOM, 
+A combination of javaScript and JQuery
 
 ### Links
 
