@@ -10,12 +10,13 @@ let buttonColour = ["red", "blue", "green", "yellow"];
 
 var gameNumber = 0; //monitor
 var click = true;
+var restart = false;
 var level = "level ";
 //var difficulty = 0;
 
 //START GAME......
 document.addEventListener("keypress", () => {
-  if (gameNumber == 20) {
+  if (gameNumber == 20 ) {
     location.reload();
   } else if (gameNumber < 1) {
     setTimeout(() => {
@@ -23,9 +24,9 @@ document.addEventListener("keypress", () => {
     }, 450);
   }
 });
-document.addEventListener("click", (e) => {
-  e.stopPropagation();
-  if (gameNumber == 20) {
+document.addEventListener("click", () => {
+
+  if (gameNumber == 20 && restart === true) {
     location.reload();
   } else if (gameNumber < 1 && click === true) {
     setTimeout(() => {
@@ -135,12 +136,15 @@ function animatePress(curentColour) {
 //GAMEOVER...
 function gameOver() {
   if (gameNumber == 20) {
-    setTimeout(() => {
+    click = false;
+    restart = true;
+    setInterval(() => {
       $(".btn").toggleClass("pressed");
-    }, 200);
+    }, 100);
     $("h1").html("You Won !, Smart Ass. Press any key to restart.");
     clickFreq = undefined;
     gameNumber = 20; //hold before reset
+   
   } else {
     playSound("wrong");
     $("body").addClass("game-over");
