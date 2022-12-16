@@ -40,7 +40,7 @@ In this game you click any key or button on your keyboard to start,
 - Semantic HTML5 markup
 - CSS 
 - JavaScript
--JQUERY
+- JQUERY
 
 ### Expected Update
  - Increase game difficulty and user responding speed at every 5 level subsequently.
